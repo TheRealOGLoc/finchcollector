@@ -7,7 +7,6 @@
     <p>Color: {{ finch.color }}</p>
     <p>Size: {{ finch.size }}</p>
 
-    <!-- 显示喂养记录 -->
     <h2>Feeding Records</h2>
     <ul>
         {% for feeding in feedings %}
@@ -15,7 +14,6 @@
         {% endfor %}
     </ul>
 
-    <!-- 显示玩具列表 -->
     <h2>Toys</h2>
     <ul>
         {% for toy in toys %}
@@ -23,7 +21,6 @@
         {% endfor %}
     </ul>
 
-    <!-- 添加玩具的表单 -->
     <h2>Add Toy</h2>
     <form method="post" action="{% url 'toy_create' pk=finch.pk %}">
         {% csrf_token %}
