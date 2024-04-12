@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+
+{% block title %}All Finches{% endblock %}
+
+{% block content %}
+    <h1>All Finches</h1>
+    <ul>
+        {% for finch in finches %}
+        <li>
+            <a href="{% url 'finch_detail' finch.pk %}">
+                {{ finch.species }} - {{ finch.color }} - {{ finch.size }}
+            </a>
+            <a href="{% url 'finch_update' finch.pk %}">Edit</a>
+            <a href="{% url 'finch_delete' finch.pk %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'finch_create' %}">Add Finch</a>
+{% endblock %}
